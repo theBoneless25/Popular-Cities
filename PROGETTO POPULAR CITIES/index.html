@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>POPULAR CITIES</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script type="module" src="./js/script.js"></script>
+    <script type="module" src="./js/utils.js"></script>
+  </head>
+  <body>
+    <!--NAV BAR, MENU HAMBURGER-->
+    <header class="header">
+      <div class="header__content">
+        <a class="header__logo" href="#">
+          <strong>POPULAR CITIES</strong>
+        </a>
+        <ul class="header__menu">
+          <li>
+            <a href="#hero" class="underline">Home</a>
+          </li>
+          <li>
+            <a href="#Cerca" class="underline">Città</a>
+          </li>
+          <li><a href="#" class="underline">Aiuto</a></li>
+        </ul>
+        <div class="header__quick">
+          <div class="toggle_container"><input type="checkbox" name="toggle" id="toggle">
+            <label for="toggle"></label></div>
+
+          <a href="#footer">Contacts</a>
+          
+          
+          <div class="icon-hamburger">
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!--SECTION HERO-->
+    <div class="grid hero" id="hero">
+      <div class=" col-50 pt-4 sma-text-center pb-3">
+        <h1>SCEGLI LA TUA PROSSIMA DESTINAZIONE!</h1>
+        <h2>Puoi scegliere tra moltissime città</h2>
+        <a href="" class="button">Supportaci</a>
+      </div>
+      <div class="col-50 relative">
+        <img class="img-res img-round " src="mondo.png" alt="img">
+      </div>
+      </div>
+    </div>
+
+    <div
+      class="cover_2 mt-4"
+      style="
+        background-image: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.2),
+            rgba(0, 0, 0, 0.6)
+          ),
+          url('https://media.istockphoto.com/id/1170941515/it/foto/al-khazneh-a-petra.jpg?s=612x612&w=0&k=20&c=dqYEUwhNCK9kqVbkGyPiWoMlzs_kRG0ZnvsqNkF8r1U='); 
+      "
+    >
+    <!--SECTION ES. POPULAR CITIES-->
+      <div class="cover__content">
+        <h1>POPULAR CITIES</h1>
+        <h2>Cerca la tua prossima Destinazione</h2>
+        <a href="#Cerca" class="button">Cerca tra le nostre Mete</a>
+      </div>
+    </div>
+    <div class="grid text-center pt-4">
+      <div class="col-100 pb-3">
+        <h2>Popular Cities</h2>
+        <p>Ecco alcune delle nostre Mete:</p>
+      </div>
+      <div class="col-33">
+        <div
+          class="cover rounder mt-3"
+          style="
+            background-image: linear-gradient(
+                to bottom,
+                rgba(0, 0, 0, 0.2),
+                rgba(0, 0, 0, 0.6)
+              ),
+              url('https://media.istockphoto.com/id/493223692/it/foto/duomo-di-milano-italia.jpg?s=612x612&w=0&k=20&c=X8QrI64NuylVeasXYRnKoj2LEHJNgI5OcVwoQwzd0bo=');
+          "
+        >
+          <div class="cover__content">
+            <h1>Milano</h1>
+            <h2>ITALY</h2>
+          </div>
+        </div>
+      </div>
+      <div class="col-33">
+        <div
+          class="cover rounder mb-3"
+          style="
+            background-image: linear-gradient(
+                to bottom,
+                rgba(0, 0, 0, 0.2),
+                rgba(0, 0, 0, 0.6)
+              ),
+              url('https://www.enforex.com/img/virtual-tour/barcelona/city-barcelona-1.jpg');
+          "
+        >
+          <div class="cover__content">
+            <h1>Barcelona</h1>
+            <h2>SPAIN</h2>
+          </div>
+        </div>
+      </div>
+      <div class="col-33">
+        <div
+          class="cover rounder mb-3"
+          style="
+            background-image: linear-gradient(
+                to bottom,
+                rgba(0, 0, 0, 0.2),
+                rgba(0, 0, 0, 0.6)
+              ),
+              url('https://media.gettyimages.com/id/924894324/it/foto/torre-eiffel-a-parigi-francia.jpg?s=612x612&w=gi&k=20&c=ctks8GdVSRVvmjU7rKtpedK7t5vKm4DxRkNQ4WDpXj0=');
+          "
+        >
+          <div class="cover__content">
+            <h1>Parigi</h1>
+            <h2>FRANCE</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--FORM PER FILTRARE E CERCARE LE CITTA-->
+    <div id="Cerca" class="form_title mt-3 pt-4 pb-3">
+      <h2>SCEGLI LA TUA PROSSIMA META</h2>
+    </div>
+      <section class="city_form pt-4 pb-3">
+        <form name="city mb-3">
+          <input  class="search"type="text" name="Città" placeholder="Es. Amsterdam" />
+          <input class="button_form" id="submit" type="submit" value="Mostra popolari"  />
+        </form>
+      </section>
+    
+
+     <!---CONTAINER CARDS-->
+
+    <div id="contain" class="container"></div>
+
+  
+    
+   <!---FOOTER--->
+   <footer id="footer">
+    <p>Popular Cities</p>
+    <p>Per altre informazioni contattaci nei link qui sotto!</p>
+    <div class="social">
+      <a href=""><img src="https://img.icons8.com/ios/500/facebook-new.png" alt=""></a>
+      <a href=""><img src="https://img.icons8.com/windows/512/instagram-new.png" alt=""></i></a>
+      <a href=""><img src="https://cdn-icons-png.flaticon.com/512/733/733635.png" alt=""></a>
+    </div>
+    <p class="end_footer">CopyRight by Popular Cities ©️</p>
+
+   </footer>
+
+  
+   
+<div class="developer">
+  <p>Made with ❤️ by Sebastiano Occhipinti</p>
+</div>
+
+    <script>
+      let item = document.querySelector(".icon-hamburger");
+      item.addEventListener("click", function () {
+        document.body.classList.toggle("menu-open");
+      });
+      
+      //let popup = document.getElementById("popup");
+     let items = document.querySelectorAll('.header__menu a');
+
+     items.forEach((item) => {
+       item.addEventListener("click", function() {
+        items.forEach((item) => {
+            item.classList.remove('underline');
+          });
+        });
+         item.classList.add('underline');
+
+       });
+    
+
+    </script>
+  </body>
+</html>
