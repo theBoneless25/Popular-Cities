@@ -209,7 +209,7 @@ a:hover {
 
 .button:hover {
   cursor: pointer;
-  background-color: black;
+  background-color: rgb(205, 202, 202);
 }
 
 /* ! Grid System */

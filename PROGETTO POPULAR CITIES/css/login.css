@@ -1,0 +1,207 @@
+/* ! Reset */
+body,
+html {
+  font-family: "Intro", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0 0 1rem 0;
+  padding: 0;
+}
+ol,
+ul {
+  list-style-type: none;
+}
+img {
+  height: auto;
+}
+h1 {
+  font-size: 4rem;
+}
+h2 {
+  font-size: 3rem;
+}
+h3 {
+  font-size: 2rem;
+}
+h4 {
+  font-size: 1rem;
+}
+h5 {
+  font-size: 0.8rem;
+}
+h6 {
+  font-size: 0.6rem;
+}
+a {
+  text-decoration: none;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+* {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(34, 36, 0);
+  background: radial-gradient(
+    circle,
+    rgba(34, 36, 0, 0.13238798937543772) 0%,
+    rgba(255, 217, 0, 0.38448882971157217) 100%
+  );
+}
+
+:root {
+  --menu-bg: black;
+  --menu-color: #fff;
+  --link-color: gold;
+}
+::selection {
+  color: #fff;
+  background: var(--link-color);
+}
+.container {
+  width: 350px;
+  padding: 35px 25px 40px 30px;
+  background: #fff;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 10px 10px 15px var(--link-color) (0, 0, 0, 0.1);
+  border: 2px solid gainsboro;
+}
+.container header {
+  font-size: 30px;
+  font-weight: 500;
+}
+.container form {
+  margin: 40px 0;
+}
+form .field {
+  width: 100%;
+  margin-bottom: 20px;
+}
+form .field.shake {
+  animation: shake 0.5s ease-in-out;
+}
+@keyframes shake {
+  0%,
+  100% {
+    margin-left: 0px;
+  }
+  20%,
+  80% {
+    margin-left: -12px;
+  }
+  40%,
+  60% {
+    margin-left: 12px;
+  }
+}
+form .field .input {
+  height: 60px;
+  width: 100%;
+  position: relative;
+}
+form input {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  padding: 0 40px;
+  font-size: 20px;
+  background: none;
+  caret-color: var(--link-color);
+  border-radius: 5px;
+  border: 1px solid var(--menu-color);
+  border-bottom-width: 2px;
+  transition: all 0.2s ease;
+}
+form .field input:focus,
+form .field.valid input {
+  border-color: var(--link-color);
+}
+form .field.shake input,
+form .field.error input {
+  border-color: red;
+}
+.field .input i {
+  position: absolute;
+  top: 55%;
+  font-size: 20px;
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+.input .icon {
+  left: 13px;
+  color: gray;
+  transition: color 0.3s ease;
+}
+.input .error-icon {
+  right: 15px;
+  color: red;
+}
+form input:focus ~ .icon,
+form .field.valid .icon {
+  color: var(--link-color);
+}
+form input::placeholder {
+  color: #bfbfbf;
+  font-size: 17px;
+}
+form .field .error-text {
+  color: #dc3545;
+  text-align: left;
+  margin-top: 5px;
+}
+form .field .error {
+  display: none;
+}
+form .field.shake .error,
+form .field.error .error {
+  display: block;
+}
+form .pass-text {
+  text-align: left;
+  margin-top: -15px;
+}
+.container a {
+  color: #5372f0;
+  text-decoration: none;
+}
+.container a:hover {
+  text-decoration: underline;
+}
+form input[type="submit"] {
+  height: 50px;
+  margin-top: 30px;
+  color: #fff;
+  padding: 0;
+  border: none;
+  background: var(--link-color);
+  cursor: pointer;
+  border-bottom: 2px solid black(0, 0, 0, 0.1);
+  transition: all 0.5s ease;
+}
+form input[type="submit"]:hover {
+  background: gainsboro;
+}
