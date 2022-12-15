@@ -6,6 +6,13 @@ const inputEl = qs(".search");
 let inputValue = "";
 let citiesList = [];
 
+const removeCards = () => {
+  const cardContainer = document.querySelectorAll(".card");
+  cardContainer.forEach((element) => {
+    element.remove();
+  });
+};
+
 /*CREAZIONE CARD*/
 
 const createCard = (data) => {
@@ -14,8 +21,8 @@ const createCard = (data) => {
   const cardEl = ce("div");
   const imgCity = ce("img");
   const titleCity = ce("h2");
-  const mostraText = ce("button");
   const urlCity = ce("p");
+  const mostraText = ce("button");
 
   cardEl.className = "card";
   imgCity.className = "card__img";
@@ -23,12 +30,12 @@ const createCard = (data) => {
   imgCity.setAttribute("alt", name);
   titleCity.textContent = name;
   titleCity.className = "card__title";
-  mostraText.className = "btn_text";
-  mostraText.textContent = "Mostra Tutto";
-  urlCity.className = "card__text";
+  urlCity.className = "card_text";
   urlCity.textContent = content;
+  mostraText.className = "btn_text";
+  mostraText.textContent = "Scopri di più";
 
-  cardEl.append(imgCity, titleCity, mostraText, urlCity);
+  cardEl.append(imgCity, titleCity, urlCity, mostraText);
   container.append(cardEl);
 };
 /*CREO LE CARD USANDO LA GET E CON L'INPUT LE FILTRO*/
@@ -51,49 +58,44 @@ inputEl.addEventListener("input", (e) => {
 });
 /*FUNZIONE CITTA PIU POPOLARI*/
 
-function removeAllChildNodes(parent) {
-  if (parent.Child) {
-    parent.removeChild(parent.Child);
-  }
-}
-
 console.log(" PRE IF", container.children);
 const submit = document.getElementById("submit");
 submit.addEventListener("click", (e) => {
   e.preventDefault();
-  container.innerHtml = "";
   console.log(submit.value);
 
-  if (submit.value === "Mostra popolari") {
-    submit.value = "Mostra tutte";
+  if (submit.value === "Mostra tutte") {
     //console.log("IF", container.children);
-    removeAllChildNodes(container);
+    submit.value = "Mostra popolari";
+    removeCards();
     //console.log("IF  POST", container.children);
     //citiesList = [];
+    console.log(citiesList);
 
-    GET(BASE_URL).then((data) => {
-      citiesList = data.filter((city) => city.show_in_popular === true);
-      citiesList.map((city) => createCard(city, container));
-      console.log(citiesList.length);
-    });
-  } else {
-    submit.value = "Mostra popolari";
-    //console.log("ELSE", container.children);
-    removeAllChildNodes(container);
-    // console.log("ELSE POST", container.children);
-    //citiesList = [];
     GET(BASE_URL).then((data) => {
       citiesList = data;
       citiesList.map((city) => createCard(city, container));
-      console.log(citiesList.length);
+      console.log("IF", citiesList.length);
+    });
+  } else {
+    submit.value = "Mostra tutte";
+    //console.log("ELSE", container.children);
+    removeCards();
+    // console.log("ELSE POST", container.children);
+    //citiesList = [];
+    GET(BASE_URL).then((data) => {
+      citiesList = data.filter((city) => city.show_in_popular === true);
+      citiesList.map((city) => createCard(city, container));
+      console.log("ELSE", citiesList.length);
     });
   }
 });
-let panel = document.querySelector(".card__text");
+
+/*let panel = document.querySelector(".card_text");
 let item = document.querySelector(".btn_text");
 panel.addEventListener("click", function () {
   item.classList.toggle("active");
-});
+});*/
 
 /*MODALE*/
 

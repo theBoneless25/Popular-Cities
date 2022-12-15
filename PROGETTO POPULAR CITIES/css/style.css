@@ -563,7 +563,7 @@ a:hover {
 .button_form {
   align-items: center;
   appearance: none;
-  background-color: #fcfcfd;
+  background-color: var(--link-color);
   border-radius: 4px;
   border-width: 0;
   box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
@@ -622,16 +622,18 @@ a:hover {
 /* CARD */
 .card {
   width: 300px;
+  max-height: fit-content;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10px;
   box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.3);
   border-radius: 12px;
   background: rgb(34, 36, 0);
-  background: linear-gradient(90deg, white 0%, var(--link-color) 81%);
+  background: var(--link-color);
   opacity: 0.6;
   margin-bottom: 15px;
+  padding-left: 7px;
+  padding-right: 7px;
 }
 .card:hover {
   opacity: 1;
@@ -640,9 +642,11 @@ a:hover {
 }
 
 .card__img {
-  width: 200px;
-  height: 150px;
+  width: 310px;
+  height: 200px;
   border-radius: 8px;
+  object-fit: cover;
+  box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.3);
 }
 .container {
   width: 100%;
@@ -654,7 +658,7 @@ a:hover {
 }
 
 .card__title {
-  color: #830a48;
+  color: black;
   display: block;
   display: -webkit-box;
   font-size: 35px;
@@ -666,10 +670,11 @@ a:hover {
   text-overflow: ellipsis;
 }
 
-.card__text {
+.card_text {
   color: black;
   text-align: center;
-  max-height: 0;
+  align-items: center;
+  max-height: 220px;
   overflow: hidden;
   transition: all 1s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
@@ -677,7 +682,7 @@ a:hover {
 .btn_text {
   align-items: center;
   appearance: none;
-  background-color: #fcfcfd;
+  background-color: rgb(205, 202, 202);
   border-radius: 4px;
   border-width: 0;
   box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
@@ -692,6 +697,7 @@ a:hover {
   line-height: 1;
   list-style: none;
   overflow: hidden;
+  padding-bottom: 20px;
   padding-left: 16px;
   padding-right: 16px;
   position: relative;
@@ -875,7 +881,7 @@ footer p:nth-child(2) {
 
 body.dark {
   background: #000;
-  color: #fff;
+  color: whitesmoke;
   transition: backgroundcolor 0.4s linear, color 0.4s linear;
 }
 
