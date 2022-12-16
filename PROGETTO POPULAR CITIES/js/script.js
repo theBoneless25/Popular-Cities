@@ -91,12 +91,6 @@ submit.addEventListener("click", (e) => {
   }
 });
 
-/*let panel = document.querySelector(".card_text");
-let item = document.querySelector(".btn_text");
-panel.addEventListener("click", function () {
-  item.classList.toggle("active");
-});*/
-
 /*MODALE*/
 
 /*const open = document.getElementById("open");
